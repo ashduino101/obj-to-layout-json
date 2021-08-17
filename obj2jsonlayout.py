@@ -112,8 +112,8 @@ for line in obj:
         for word in lineprocess:
             coords = lineprocess.split()
         x = coords[0]
-        y = coords[1]
-        z = coords[2]
+        z = coords[1]
+        y = coords[2]
         outputpoints = outputpoints + '{ "x": ' + x + ', "y": ' + y + ' }, '
 completeJSON = default_pre_data + outputpoints + default_post_data
 with open("output.layout.json", "w") as outfile:
