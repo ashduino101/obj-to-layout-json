@@ -114,7 +114,7 @@ for line in obj:
         x = coords[0]
         y = coords[1]
         z = coords[2]
-        outputpoints = outputpoints + '{ "x": ' + x + ', "y": ' + y + ', "z": ' + z + ' }, '
+        outputpoints = outputpoints + '{ "x": ' + x + ', "y": ' + y + ' }, '
 completeJSON = default_pre_data + outputpoints + default_post_data
 with open("output.layout.json", "w") as outfile:
     outfile.write(completeJSON)
