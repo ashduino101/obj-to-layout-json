@@ -105,6 +105,7 @@ obj.seek(0)
 #Find line count of object
 obj2 = readobj.split("\n")
 linec = len(obj2)
+#Get lists of vertices and faces
 for line in obj:
     lineprocess = line.strip()
     if lineprocess.startswith("v"):
@@ -114,7 +115,12 @@ for line in obj:
         x = coords[0]
         z = coords[1]
         y = coords[2]
+    if lineprocess.startswith("f"):
+        lineprocess = lineprocess.replace("f ", "")
+        for word in lineprocess:
+            face = lineprocess.split()
         outputpoints = outputpoints + '{ "x": ' + x + ', "y": ' + y + ' }, '
 completeJSON = default_pre_data + outputpoints + default_post_data
 with open("output.layout.json", "w") as outfile:
     outfile.write(completeJSON)
+
